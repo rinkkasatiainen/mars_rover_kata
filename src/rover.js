@@ -1,5 +1,3 @@
-
-
-module.exports = (oldPosition, commands) => {
+module.exports = oldPosition => commands => {
   return oldPosition;
 }
