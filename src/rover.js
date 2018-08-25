@@ -1,13 +1,13 @@
 module.exports = mission => {
   const [x, y, facing, commands] = mission; // variables
-  if ( facing === 's' ){
-    if (commands === 'f')
-      return [x, y - 1];
-    else
-      return [x, y];
-  }
+  let forward;
+  if ( facing === 's' )
+    forward = ([x, y]) => [x, y - 1]
+  else
+    forward = ([x, y]) => [x, y + 1]
+
   if (commands === 'f')
-    return [x, y + 1];
+    return forward([x,y]);
   else
     return [x, y];
 };
