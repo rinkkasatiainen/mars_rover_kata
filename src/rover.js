@@ -1,6 +1,7 @@
 module.exports = mission => {
-  const [x, y, commands] = mission;
+  const [x, y, commands] = mission; // variables
   if (commands === 'f')
     return [x, y + 1];
-  return [x, y];
+  else
+    return [x, y];
 };
