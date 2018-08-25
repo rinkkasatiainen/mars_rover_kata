@@ -4,14 +4,14 @@ const runCommands = require('./rover')
 
 describe('Mars rover', () => {
   it('should not move if it receives no commands', function () {
-    const oldPosition = [0, 0];
-    const newPosition = runCommands(oldPosition)('');
-    expect(newPosition).to.eql(oldPosition);
+    const mission = [0, 0];
+    const newPosition = runCommands(mission);
+    expect(newPosition).to.eql([0, 0]);
   });
 
   it('should go forward by one', () => {
-    const oldPosition = [0, 0];
-    const newPosition = runCommands(oldPosition)('f');
+    const mission = [0, 0, 'f'];
+    const newPosition = runCommands(mission);
     expect(newPosition).to.eql([0, 1]);
   })
 });

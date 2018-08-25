@@ -1,5 +1,6 @@
-module.exports = position => commands => {
+module.exports = mission => {
+  const [x, y, commands] = mission;
   if (commands === 'f')
-    return [position[0], position[1] + 1];
-  return position;
-}
+    return [x, y + 1];
+  return [x, y];
+};
