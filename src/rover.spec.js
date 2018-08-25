@@ -8,4 +8,10 @@ describe('Mars rover', () => {
     const newPosition = runCommands(oldPosition)('');
     expect(newPosition).to.eql(oldPosition);
   });
+
+  it('should go forward by one', () => {
+    const oldPosition = [0, 0];
+    const newPosition = runCommands(oldPosition)('f');
+    expect(newPosition).to.eql([0, 1]);
+  })
 });
