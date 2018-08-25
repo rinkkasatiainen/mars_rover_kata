@@ -1,7 +1,5 @@
-function runCommands(oldPosition, commands) {
-  return oldPosition;
-}
 const {expect} = require("chai")
+const runCommands = require('./rover')
 
 
 describe('Mars rover', () => {
