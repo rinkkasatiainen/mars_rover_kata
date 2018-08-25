@@ -1,10 +1,10 @@
 const S = require('sanctuary')
 
-function forward(facing) {
+function forward({x, y, facing}) {
   if (facing === 's')
-    return ({x, y, facing}) => ({x, y: y - 1 , facing})
+    return {x, y: y - 1 , facing}
   else
-    return ({x, y, facing}) => ({x, y: y + 1 , facing})
+    return {x, y: y + 1 , facing}
 }
 
 function positionOf({x, y, facing}) {
@@ -17,7 +17,7 @@ module.exports = mission => {
   const execute = initial => command => {
     const {x, y, facing} = initial;
     if (command === 'f')
-      return forward(facing)({x, y, facing});
+      return forward({x, y, facing});
     else
       return {x, y, facing};
   }
