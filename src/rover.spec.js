@@ -10,8 +10,14 @@ describe('Mars rover', () => {
   });
 
   it('should go forward by one', () => {
-    const mission = [0, 0, 'f'];
+    const mission = [0, 0, 'n', 'f'];
     const newPosition = runCommands(mission);
     expect(newPosition).to.eql([0, 1]);
+  });
+
+  it('should go south if facing that direction', () => {
+    const mission = [0, 0, 's', 'f'];
+    const newPosition = runCommands(mission);
+    expect(newPosition).to.eql([0, -1])
   })
 });
