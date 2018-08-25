@@ -20,4 +20,11 @@ describe('Mars rover', () => {
     const newPosition = runCommands(mission);
     expect(newPosition).to.eql([0, -1])
   })
+
+  it('should take multiple commands', () => {
+    const mission = [0, 0, 's', 'f', 'f'];
+    const newPosition = runCommands(mission);
+    expect(newPosition).to.eql([0, -2])
+  })
+
 });

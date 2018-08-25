@@ -11,6 +11,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
+    "sanctuary": "^0.15.0",
     "sinon": "^6.1.5"
   }
 }
