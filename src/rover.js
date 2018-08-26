@@ -9,8 +9,7 @@ function forward({x, y, facing}) {
 }
 
 function positionOf(justOf) {
-  const {x, y, facing } = S.maybeToNullable(justOf)
-  return [x, y];
+  return S.maybeToNullable(S.map(({x,y}) => [x,y])(justOf))
 }
 
 // :: commandToFunction
