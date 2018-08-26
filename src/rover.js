@@ -13,9 +13,16 @@ function positionOf(justOf) {
   return [x, y];
 }
 
+// :: commandToFunction
+const commandToFunction = (command) => {
+  if (command === 'f')
+    return forward;
+  return null;
+}
+
 module.exports = mission => {
   const [x, y, facing, ...commands] = mission; // variables
-  const functions = commands.map(c => forward)
+  const functions = commands.map(commandToFunction)
 
   return positionOf(S.pipeK(functions)( S.Just({x,y,facing}) ))
 };
